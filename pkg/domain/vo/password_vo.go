@@ -1,16 +1,16 @@
 package vo
 
 import (
-	"errors"
+	"github.com/DanielAgostinhoSilva/integration-config/pkg/domain/errors"
 	"unicode"
 )
 
 var (
-	ErrPasswordIsTooShort         = errors.New("password is too short, must be at least 8 characters long")
-	ErrPasswordUppercaseLetter    = errors.New("password must include at least one uppercase letter")
-	ErrPasswordLowercaseLetter    = errors.New("password must include at least one lowercase letter")
-	ErrPasswordAtLeastOneDigit    = errors.New("password must include at least one digit")
-	ErrPasswordAtLeastSpecialChar = errors.New("password must include at least one special character")
+	ErrPasswordIsTooShort         = errors.NewBusinessError("password is too short, must be at least 8 characters long")
+	ErrPasswordUppercaseLetter    = errors.NewBusinessError("password must include at least one uppercase letter")
+	ErrPasswordLowercaseLetter    = errors.NewBusinessError("password must include at least one lowercase letter")
+	ErrPasswordAtLeastOneDigit    = errors.NewBusinessError("password must include at least one digit")
+	ErrPasswordAtLeastSpecialChar = errors.NewBusinessError("password must include at least one special character")
 )
 
 type PasswordVo struct {

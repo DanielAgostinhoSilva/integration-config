@@ -2,6 +2,7 @@ package vo
 
 import (
 	"fmt"
+	"github.com/DanielAgostinhoSilva/integration-config/pkg/domain/errors"
 	"github.com/google/uuid"
 )
 
@@ -20,12 +21,12 @@ func NewID(value interface{}) (*ID, error) {
 	case string:
 		id, err := uuid.Parse(v)
 		if err != nil {
-			return nil, err
+			return nil, errors.NewBusinessError("invalid id")
 		}
 		return &ID{value: id}, nil
 	case uuid.UUID:
 		return &ID{value: v}, nil
 	default:
-		return nil, fmt.Errorf("unsupported type: %T", value)
+		return nil, errors.NewBusinessError(fmt.Sprintf("unsupported type: %T", value))
 	}
 }

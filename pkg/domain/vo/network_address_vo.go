@@ -2,7 +2,7 @@ package vo
 
 import (
 	"context"
-	"errors"
+	"github.com/DanielAgostinhoSilva/integration-config/pkg/domain/errors"
 	"net"
 	"regexp"
 )
@@ -10,8 +10,8 @@ import (
 const ipPattern = `^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$`
 
 var (
-	ErrInvalidNetworkAddress  = errors.New("invalid network address")
-	ErrNoIpAssociatedWithHost = errors.New("no IPs associated with the hostname")
+	ErrInvalidNetworkAddress  = errors.NewBusinessError("invalid network address")
+	ErrNoIpAssociatedWithHost = errors.NewBusinessError("no IPs associated with the hostname")
 )
 
 type NetworkAddress struct {

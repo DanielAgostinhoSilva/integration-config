@@ -1,14 +1,14 @@
 package vo
 
 import (
-	"errors"
+	"github.com/DanielAgostinhoSilva/integration-config/pkg/domain/errors"
 	"strconv"
 )
 
 var (
-	ErrCouldNotConvertPort = errors.New("could not convert port to integer")
-	ErrInvalidPort         = errors.New("invalid port, port is out of the allowed range (0-65535)")
-	ErrPortNotNumber       = errors.New("port is not a number")
+	ErrCouldNotConvertPort = errors.NewBusinessError("could not convert port to integer")
+	ErrInvalidPort         = errors.NewBusinessError("invalid port, port is out of the allowed range (0-65535)")
+	ErrPortNotNumber       = errors.NewBusinessError("port is not a number")
 )
 
 // NetworkPort estrutura que representa uma porta de rede
