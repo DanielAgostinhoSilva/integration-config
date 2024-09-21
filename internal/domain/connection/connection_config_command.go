@@ -7,3 +7,21 @@ type CreateCommand struct {
 	Password               string
 	ConnectionConfigEntity ConnectionConfigGateway
 }
+
+type UpdateHostCommand struct {
+	Host                   string
+	ConnectionConfigEntity ConnectionConfigGateway
+}
+
+type UpdatePortCommand struct {
+	Port any
+}
+
+type UpdateUsernameCommand struct {
+	Username               string
+	ConnectionConfigEntity ConnectionConfigGateway
+}
+
+type UpdatePasswordCommand struct {
+	Password string
+}
