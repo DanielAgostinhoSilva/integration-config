@@ -8,6 +8,7 @@ require (
 )
 
 require (
+	github.com/DanielAgostinhoSilva/go-domain-event v0.0.2-0.20240925003436-5b8f486d4213 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/stretchr/objx v0.5.2 // indirect

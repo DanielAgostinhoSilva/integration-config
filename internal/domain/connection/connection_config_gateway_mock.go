@@ -20,14 +20,14 @@ func (m *MockConnectionConfigGateway) FindByUserNameAndHost(userName string, hos
 	return args.Get(0).(ConnectionConfigEntity), args.Error(1)
 }
 
-func (m *MockConnectionConfigGateway) Save(entity ConnectionConfigEntity) (ConnectionConfigEntity, error) {
+func (m *MockConnectionConfigGateway) Save(entity *ConnectionConfigEntity) (*ConnectionConfigEntity, error) {
 	args := m.Called(entity)
-	return args.Get(0).(ConnectionConfigEntity), args.Error(1)
+	return args.Get(0).(*ConnectionConfigEntity), args.Error(1)
 }
 
-func (m *MockConnectionConfigGateway) Delete(entity ConnectionConfigEntity) (ConnectionConfigEntity, error) {
+func (m *MockConnectionConfigGateway) Delete(entity *ConnectionConfigEntity) error {
 	args := m.Called(entity)
-	return args.Get(0).(ConnectionConfigEntity), args.Error(1)
+	return args.Error(0)
 }
 
 func (m *MockConnectionConfigGateway) ExistsUserNameAndHostAndIdNot(userName string, host string, id uuid.UUID) (bool, error) {

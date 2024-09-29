@@ -63,7 +63,7 @@ func CreateConnectionConfigEntity(command CreateCommand) (*ConnectionConfigEntit
 	if err != nil {
 		return nil, err
 	}
-	exist, err := command.ConnectionConfigEntity.ExistsUserNameAndHostAndIdNot(
+	exist, err := command.ConnectionConfigGateway.ExistsUserNameAndHostAndIdNot(
 		entity.userName.Value(),
 		entity.host.Value(),
 		entity.id.Value(),

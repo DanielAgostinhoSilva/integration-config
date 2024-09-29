@@ -1,3 +1,7 @@
+github.com/DanielAgostinhoSilva/go-domain-event v0.0.1 h1:173iTEtcroTO5CLstBeRvwipVbLG6cTI81E81cU1jSM=
+github.com/DanielAgostinhoSilva/go-domain-event v0.0.1/go.mod h1:ts/7K+eS049JOG8hEhv5zmBD/JlTByKvsTpN+zHWFh8=
+github.com/DanielAgostinhoSilva/go-domain-event v0.0.2-0.20240925003436-5b8f486d4213 h1:roIigAVnfiNfGW12Y2DQjGPdNRwNRDfPcA9Ea5S1j88=
+github.com/DanielAgostinhoSilva/go-domain-event v0.0.2-0.20240925003436-5b8f486d4213/go.mod h1:CKZrYayv6A6r/SjaRkR8h6c0GUjPDLyRmcUE1VDBi2c=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/google/uuid v1.6.0 h1:NIvaJDMOsjHA8n1jAhLSgzrAzy1Hgr+hNrb57e+94F0=

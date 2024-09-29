@@ -66,11 +66,11 @@ func (suite *ConnectionConfigEntityTestSuite) TestNewConnectionConfigEntityInval
 func (suite *ConnectionConfigEntityTestSuite) TestCreateConnectionConfigEntity() {
 	suite.mockEntity.On("ExistsUserNameAndHostAndIdNot", "ValidName", "localhost", mock.Anything).Return(false, nil)
 	command := CreateCommand{
-		Host:                   "localhost",
-		Port:                   8080,
-		Username:               "ValidName",
-		Password:               "Valid1@Password",
-		ConnectionConfigEntity: suite.mockEntity,
+		Host:                    "localhost",
+		Port:                    8080,
+		Username:                "ValidName",
+		Password:                "Valid1@Password",
+		ConnectionConfigGateway: suite.mockEntity,
 	}
 
 	entity, err := CreateConnectionConfigEntity(command)
@@ -83,11 +83,11 @@ func (suite *ConnectionConfigEntityTestSuite) TestCreateConnectionConfigEntity()
 func (suite *ConnectionConfigEntityTestSuite) TestCreateConnectionConfigEntityExists() {
 	suite.mockEntity.On("ExistsUserNameAndHostAndIdNot", "ValidName", "localhost", mock.Anything).Return(true, nil)
 	command := CreateCommand{
-		Host:                   "localhost",
-		Port:                   8080,
-		Username:               "ValidName",
-		Password:               "Valid1@Password",
-		ConnectionConfigEntity: suite.mockEntity,
+		Host:                    "localhost",
+		Port:                    8080,
+		Username:                "ValidName",
+		Password:                "Valid1@Password",
+		ConnectionConfigGateway: suite.mockEntity,
 	}
 
 	entity, err := CreateConnectionConfigEntity(command)
@@ -102,11 +102,11 @@ func (suite *ConnectionConfigEntityTestSuite) TestUpdateHost() {
 	suite.mockEntity.On("ExistsUserNameAndHostAndIdNot", "ValidName", "localhost", mock.Anything).Return(false, nil)
 	suite.mockEntity.On("ExistsUserNameAndHostAndIdNot", "ValidName", "192.168.1.1", mock.Anything).Return(false, nil)
 	command := CreateCommand{
-		Host:                   "localhost",
-		Port:                   8080,
-		Username:               "ValidName",
-		Password:               "Valid1@Password",
-		ConnectionConfigEntity: suite.mockEntity,
+		Host:                    "localhost",
+		Port:                    8080,
+		Username:                "ValidName",
+		Password:                "Valid1@Password",
+		ConnectionConfigGateway: suite.mockEntity,
 	}
 
 	entity, _ := CreateConnectionConfigEntity(command)
@@ -123,11 +123,11 @@ func (suite *ConnectionConfigEntityTestSuite) TestUpdateHostEntityExists() {
 	suite.mockEntity.On("ExistsUserNameAndHostAndIdNot", "ValidName", "localhost", mock.Anything).Return(false, nil)
 	suite.mockEntity.On("ExistsUserNameAndHostAndIdNot", "ValidName", "192.168.1.1", mock.Anything).Return(true, nil)
 	command := CreateCommand{
-		Host:                   "localhost",
-		Port:                   8080,
-		Username:               "ValidName",
-		Password:               "Valid1@Password",
-		ConnectionConfigEntity: suite.mockEntity,
+		Host:                    "localhost",
+		Port:                    8080,
+		Username:                "ValidName",
+		Password:                "Valid1@Password",
+		ConnectionConfigGateway: suite.mockEntity,
 	}
 
 	entity, _ := CreateConnectionConfigEntity(command)
@@ -143,11 +143,11 @@ func (suite *ConnectionConfigEntityTestSuite) TestUpdateHostEntityExists() {
 func (suite *ConnectionConfigEntityTestSuite) TestUpdateHostInvalidHost() {
 	suite.mockEntity.On("ExistsUserNameAndHostAndIdNot", "ValidName", "localhost", mock.Anything).Return(false, nil)
 	command := CreateCommand{
-		Host:                   "localhost",
-		Port:                   8080,
-		Username:               "ValidName",
-		Password:               "Valid1@Password",
-		ConnectionConfigEntity: suite.mockEntity,
+		Host:                    "localhost",
+		Port:                    8080,
+		Username:                "ValidName",
+		Password:                "Valid1@Password",
+		ConnectionConfigGateway: suite.mockEntity,
 	}
 
 	entity, _ := CreateConnectionConfigEntity(command)
@@ -163,11 +163,11 @@ func (suite *ConnectionConfigEntityTestSuite) TestUpdatePort() {
 	suite.mockEntity.On("ExistsUserNameAndHostAndIdNot", "ValidName", "localhost", mock.Anything).Return(false, nil)
 
 	command := CreateCommand{
-		Host:                   "localhost",
-		Port:                   8080,
-		Username:               "ValidName",
-		Password:               "Valid1@Password",
-		ConnectionConfigEntity: suite.mockEntity,
+		Host:                    "localhost",
+		Port:                    8080,
+		Username:                "ValidName",
+		Password:                "Valid1@Password",
+		ConnectionConfigGateway: suite.mockEntity,
 	}
 
 	entity, _ := CreateConnectionConfigEntity(command)
@@ -182,11 +182,11 @@ func (suite *ConnectionConfigEntityTestSuite) TestUpdatePortInvalidPort() {
 	suite.mockEntity.On("ExistsUserNameAndHostAndIdNot", "ValidName", "localhost", mock.Anything).Return(false, nil)
 
 	command := CreateCommand{
-		Host:                   "localhost",
-		Port:                   8080,
-		Username:               "ValidName",
-		Password:               "Valid1@Password",
-		ConnectionConfigEntity: suite.mockEntity,
+		Host:                    "localhost",
+		Port:                    8080,
+		Username:                "ValidName",
+		Password:                "Valid1@Password",
+		ConnectionConfigGateway: suite.mockEntity,
 	}
 
 	entity, _ := CreateConnectionConfigEntity(command)
@@ -201,11 +201,11 @@ func (suite *ConnectionConfigEntityTestSuite) TestUpdatePassword() {
 	suite.mockEntity.On("ExistsUserNameAndHostAndIdNot", "ValidName", "localhost", mock.Anything).Return(false, nil)
 
 	command := CreateCommand{
-		Host:                   "localhost",
-		Port:                   8080,
-		Username:               "ValidName",
-		Password:               "Valid1@Password",
-		ConnectionConfigEntity: suite.mockEntity,
+		Host:                    "localhost",
+		Port:                    8080,
+		Username:                "ValidName",
+		Password:                "Valid1@Password",
+		ConnectionConfigGateway: suite.mockEntity,
 	}
 
 	entity, _ := CreateConnectionConfigEntity(command)
@@ -220,11 +220,11 @@ func (suite *ConnectionConfigEntityTestSuite) TestUpdatePassword() {
 func (suite *ConnectionConfigEntityTestSuite) TestUpdatePasswordInvalidPassword() {
 	suite.mockEntity.On("ExistsUserNameAndHostAndIdNot", "ValidName", "localhost", mock.Anything).Return(false, nil)
 	command := CreateCommand{
-		Host:                   "localhost",
-		Port:                   8080,
-		Username:               "ValidName",
-		Password:               "Valid1@Password",
-		ConnectionConfigEntity: suite.mockEntity,
+		Host:                    "localhost",
+		Port:                    8080,
+		Username:                "ValidName",
+		Password:                "Valid1@Password",
+		ConnectionConfigGateway: suite.mockEntity,
 	}
 
 	entity, _ := CreateConnectionConfigEntity(command)
@@ -239,11 +239,11 @@ func (suite *ConnectionConfigEntityTestSuite) TestUpdateUserName() {
 	suite.mockEntity.On("ExistsUserNameAndHostAndIdNot", "ValidName", "localhost", mock.Anything).Return(false, nil)
 	suite.mockEntity.On("ExistsUserNameAndHostAndIdNot", "NewName", "localhost", mock.Anything).Return(false, nil)
 	command := CreateCommand{
-		Host:                   "localhost",
-		Port:                   8080,
-		Username:               "ValidName",
-		Password:               "Valid1@Password",
-		ConnectionConfigEntity: suite.mockEntity,
+		Host:                    "localhost",
+		Port:                    8080,
+		Username:                "ValidName",
+		Password:                "Valid1@Password",
+		ConnectionConfigGateway: suite.mockEntity,
 	}
 
 	entity, _ := CreateConnectionConfigEntity(command)
@@ -260,11 +260,11 @@ func (suite *ConnectionConfigEntityTestSuite) TestUpdateUserNameEntityExists() {
 	suite.mockEntity.On("ExistsUserNameAndHostAndIdNot", "ValidName", "localhost", mock.Anything).Return(false, nil)
 	suite.mockEntity.On("ExistsUserNameAndHostAndIdNot", "ExistingName", "localhost", mock.Anything).Return(true, nil)
 	command := CreateCommand{
-		Host:                   "localhost",
-		Port:                   8080,
-		Username:               "ValidName",
-		Password:               "Valid1@Password",
-		ConnectionConfigEntity: suite.mockEntity,
+		Host:                    "localhost",
+		Port:                    8080,
+		Username:                "ValidName",
+		Password:                "Valid1@Password",
+		ConnectionConfigGateway: suite.mockEntity,
 	}
 
 	entity, _ := CreateConnectionConfigEntity(command)
@@ -280,11 +280,11 @@ func (suite *ConnectionConfigEntityTestSuite) TestUpdateUserNameEntityExists() {
 func (suite *ConnectionConfigEntityTestSuite) TestUpdateUserNameInvalidName() {
 	suite.mockEntity.On("ExistsUserNameAndHostAndIdNot", "ValidName", "localhost", mock.Anything).Return(false, nil)
 	command := CreateCommand{
-		Host:                   "localhost",
-		Port:                   8080,
-		Username:               "ValidName",
-		Password:               "Valid1@Password",
-		ConnectionConfigEntity: suite.mockEntity,
+		Host:                    "localhost",
+		Port:                    8080,
+		Username:                "ValidName",
+		Password:                "Valid1@Password",
+		ConnectionConfigGateway: suite.mockEntity,
 	}
 
 	entity, _ := CreateConnectionConfigEntity(command)
